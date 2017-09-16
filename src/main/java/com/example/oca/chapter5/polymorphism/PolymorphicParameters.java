@@ -30,5 +30,11 @@ public class PolymorphicParameters {
         zooWorker.feed(new Alligator());
         zooWorker.feed(new Crocodile());
         zooWorker.feed(new Reptile());
+        zooWorker.feed(new Reptile() {
+            @Override
+            public String getName() {
+                return "Anonymous class";
+            }
+        });
     }
 }
