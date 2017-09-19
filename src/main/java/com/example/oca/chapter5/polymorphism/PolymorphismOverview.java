@@ -1,7 +1,7 @@
 package com.example.oca.chapter5.polymorphism;
 
 public class PolymorphismOverview {
-    public class Primate {
+    public static class Primate {
         public boolean hasHair() {
             return true;
         }
@@ -9,7 +9,7 @@ public class PolymorphismOverview {
     public interface HasTail {
          boolean isTailStriped();
     }
-    public class Lemur extends Primate implements HasTail {
+    public static class Lemur extends Primate implements HasTail {
         @Override
         public boolean isTailStriped() {
             return false;
@@ -24,6 +24,10 @@ public class PolymorphismOverview {
             HasTail hasTail = lemur;
             System.out.println("hasTail.isTailStriped() = " + hasTail.isTailStriped());
 //            System.out.println("hasTail.age = " + hasTail.age); // DOES NOT COMPILE
+
+            Primate primate = lemur;
+            System.out.println("primate.hasHair() = " + primate.hasHair());
+//        System.out.println("primate.isTailStriped() = " + primate.isTailStriped()); // DOES NOT COMPILE
         }
     }
 }
